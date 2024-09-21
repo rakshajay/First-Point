@@ -1,7 +1,10 @@
 import './App.scss'
 import React, { useState } from "react";
 import {BrowserRouter,Routes, Route} from "react-router-dom";
-import ModelUploader from './Components/ModelUploader/ModelUploader';
+import TextInput from './Components/TextInput/TextInput';
+import { Suspense } from "react";
+import SelfIntro from './Components/SelfIntro/SelfIntro';
+import Architecture from './pages/Architecture/Architecture';
 
 
 
@@ -11,7 +14,15 @@ function App() {
         <Routes>
                 <Route
                   path="/"
-                  element={<ModelUploader />}
+                  element={<Suspense fallback={null}><TextInput /></Suspense>}
+                />
+                <Route
+                  path="/intro"
+                  element={<SelfIntro />}
+                />
+                <Route
+                  path="/Architecture"
+                  element={<Architecture />}
                 />
                 </Routes>
                 

@@ -1,0 +1,38 @@
+.architecture-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .project-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+    .project-image {
+      width: 100%;
+      height: auto;
+    }
+  
+    .project-details {
+      margin-top: 10px;
+      p {
+        margin: 5px 0;
+      }
+    }
+  
+    .project-gallery {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+  
+      .gallery-item {
+        img {
+          width: 50px;
+          height: 50px;
+        }
+      }
+    }
+  }
+  
