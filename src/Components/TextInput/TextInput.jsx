@@ -68,6 +68,7 @@ const TextInput = () => {
     <>
       <div style={{ position: "absolute", top: 20, left: 20, zIndex: 10 }}>
         <input
+          id="1"
           type="text"
           value={prompt}
           onChange={function (e) { setPrompt(e.target.value); }}
