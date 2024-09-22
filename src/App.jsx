@@ -1,16 +1,18 @@
-import './App.scss'
+import './App.scss';
 import React, { useState } from "react";
 import {BrowserRouter,Routes, Route} from "react-router-dom";
 import TextInput from './Components/TextInput/TextInput';
 import { Suspense } from "react";
 import SelfIntro from './Components/SelfIntro/SelfIntro';
 import Architecture from './pages/Architecture/Architecture';
+import Header from './Components/Header/Header';
 
 
 
 function App() {
   return (
   <BrowserRouter>
+  <Header />
         <Routes>
                 <Route
                   path="/"

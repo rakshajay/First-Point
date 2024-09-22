@@ -1,0 +1,12 @@
+@use "../src/styles/partials/mixins" as *;
+@use "../src/styles/partials/variables" as *;
+@use "../src/styles/partials/typography" as *;
+
+.header{
+    background-color: black;
+    padding: 2rem 2rem ;
+    img{
+        width: 2rem;
+        
+    }
+}

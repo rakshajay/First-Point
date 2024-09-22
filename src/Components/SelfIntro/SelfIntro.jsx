@@ -1,8 +1,10 @@
+import "./SelfIntro.scss";
 import React, { useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
 import raksha3D from "../../assets/3DModels/standard_front_view_o_0919011450.glb";
 import { MeshBasicMaterial, MeshStandardMaterial} from 'three';
+
 
 const My3DModel = () => {
   const { scene,nodes, matrial} = useGLTF(raksha3D);
@@ -41,10 +43,10 @@ const SelfIntro = () => {
         </Canvas>
       </div>
 
-      <div style={styles.rightSection}>
+      <div id="text" >
         <h2>About Me</h2>
         <p>Hi, I'm Raksha, an architect and tech enthusiast. My portfolio showcases my diverse passions and projects that blend creativity and technology.</p>
-        <div style={styles.linksSection}>
+        <div>
           <h1><a href="#architecture">Architecture</a></h1>
           <h1><a href="#ar-vr-xr">AR/VR/XR</a></h1>
           <h1><a href="#cooking">Cooking</a></h1>

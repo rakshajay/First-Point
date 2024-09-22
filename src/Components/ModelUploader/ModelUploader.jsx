@@ -3,7 +3,7 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Environment, useGLTF, Reflector } from "@react-three/drei";
 import { Physics, useBox, useSphere } from "@react-three/cannon";
 import { useEffect, useRef, useState } from "react";
-import hdr from "../../assets/adamsbridge.hdr";
+import hdr from "../../assets/hdr/adamsbridge.hdr";
 import giraffe from "../../assets/3DModels/model (19).glb";
 import bike from "../../assets/3DModels/bike.glb";
 import { EffectComposer, N8AO, SMAA } from "@react-three/postprocessing";
@@ -69,7 +69,7 @@ const ModelUploader = ({ newModel }) => {
     }));
 
     useFrame(() => {
-      for (let i = 0; i < 20; i++) {
+      for (let i = 0; i < 40; i++) {
         ref.current.getMatrixAt(i, mat);
         api
           .at(i)
@@ -103,7 +103,7 @@ const ModelUploader = ({ newModel }) => {
           ref={ref}
           castShadow
           receiveShadow
-          args={[geometry, null, 20]}
+          args={[geometry, null, 40]}
           scale={[1, 1, 1]}
         >
           <primitive attach="material" object={glassMaterial} />

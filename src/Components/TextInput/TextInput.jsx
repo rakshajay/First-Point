@@ -8,8 +8,9 @@ const TextInput = () => {
   const [modelId, setModelId] = useState(null);
   const [modelUrls, setModelUrls] = useState(null);
 
-  const apiKey = "msy_3hxOqTwQqyAEG0A778oruSNfhYYYdwDoU1YE";
-  const apiUrl = "https://api.meshy.ai/v2/text-to-3d"; // Removed trailing slash
+  const apiUrl = import.meta.env.API_URL;
+  const apiKey = import.meta.env.API_CODE;
+  
 
   const promptSubmit = async () => {
     try {
@@ -47,16 +48,16 @@ const TextInput = () => {
               "3D Model URLs (glb):",
               getModelResponse.data.model_urls.glb
             );
-            setModelUrls(getModelResponse.data.model_urls.glb); // Move setModelUrls inside the 100% check
-            clearInterval(checkModelProgress); // Ensure this runs immediately after the condition is true
+            setModelUrls(getModelResponse.data.model_urls.glb); // shd setModelUrls inside the 100% check
+            clearInterval(checkModelProgress); // this is to ensure this runs immediately after the condition is true
           } else {
             console.log("Model Loading Progress:", getModelResponse.data.progress);
           }
         } catch (error) {
           console.error("Error checking model progress:", error);
-          clearInterval(checkModelProgress); // Clear the interval on error to prevent infinite loops
+          clearInterval(checkModelProgress); // To clear the interval on error to prevent infinite loops
         }
-      }, 1 * 60 * 1000); // Checking every minute
+      }, 1 * 60 * 1000); 
       
     
     } catch (error) {
@@ -66,7 +67,7 @@ const TextInput = () => {
 
   return (
     <>
-      <div style={{ position: "absolute", top: 20, left: 20, zIndex: 10 }}>
+      <div className="prompt">
         <input
           id="1"
           type="text"
@@ -81,9 +82,6 @@ const TextInput = () => {
       </div>
       <button style={{ position: "absolute", bottom: 20, right: 20, zIndex: 10 }}>
       
-      </button>
-      <button style={{ position: "absolute", top: 20, right: 20, zIndex: 10 }}>
-       ?
       </button>
     </>
   );
