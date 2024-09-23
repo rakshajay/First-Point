@@ -1,0 +1,48 @@
+@use "../src/styles/partials/mixins" as *;
+@use "../src/styles/partials/variables" as *;
+@use "../src/styles/partials/typography" as *;
+
+.home {
+  &-prompt {
+    @include flex-center;
+    position: absolute;
+    flex-direction: column;
+    top: 56%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+
+    input {
+      padding: .9375rem;
+      width: 100vw;
+      background-color: $dark-charcoal;
+      color: $jordy-blue;
+      text-align: center;
+    }
+
+    button {
+      width: 100vw;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: $mikado-yellow;
+      color: $vampire-black;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $jasmine;
+      }
+    }
+  }
+
+  &-index {
+    @include flex-center;
+    flex-direction: column;
+    width: 100vw;
+    background-color: $vampire-black;
+    position: absolute;
+    z-index: 10;
+    color: $dark-charcoal;
+  }
+}

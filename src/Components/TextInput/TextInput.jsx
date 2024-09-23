@@ -1,65 +1,95 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import './TextInput.scss';
+import React, { useState } from "react";
+import axios from "axios";
+import "./TextInput.scss";
+import ModelUploader from "../ModelUploader/ModelUploader";
 
 const TextInput = () => {
-  const [prompt, setPrompt] = useState('');
+  const [prompt, setPrompt] = useState("");
   const [modelId, setModelId] = useState(null);
+  const [modelUrls, setModelUrls] = useState(null);
 
-//   const apiKey = 'msy_cEGM8k0DmZMYMcDgr9h6MwIVsxeDxUEQrrty'; // Replace with your Meshy API key-fedra
-  const apiKey = 'msy_3hxOqTwQqyAEG0A778oruSNfhYYYdwDoU1YE';
-   const apiUrl = 'https://api.meshy.ai/v2/text-to-3d/';
-  // Function to handle the prompt submission
+  const apiUrl = import.meta.env.API_URL;
+  const apiKey = import.meta.env.API_CODE;
+  
+
   const promptSubmit = async () => {
     try {
-      // POST request to create a 3D model based on the prompt
       const response = await axios.post(
-        `${apiUrl}`,
+        apiUrl,
         {
-          mode: 'preview',
+          mode: "preview",
           prompt: prompt,
-          art_style: 'realistic',
-          negative_prompt: 'low quality, low resolution, low poly, ugly',
+          art_style: "pbr",
+          negative_prompt: "low quality, low resolution, low poly, ugly",
         },
         {
           headers: {
             Authorization: `Bearer ${apiKey}`,
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
         }
       );
-    
-      const modelId = response.data.result; // Get the model ID from the response
+      console.log("response:", response.data.result);
+      const modelId = response.data.result;
       setModelId(modelId);
-      console.log('Model ID:', modelId);
+      console.log("Model ID:", modelId);
 
-      // GET request to fetch model URLs using the model ID
-      const getModelResponse = await axios.get(
-        `${apiUrl}${modelId}`,
-        {
-          headers: {
-            Authorization: `Bearer ${apiKey}`,
-          },
-        }
-      );
-
-      const modelUrls = getModelResponse.data;
-      console.log('3D Model URLs:', modelUrls);
+      const checkModelProgress = setInterval(async () => {
+        try {
+          const getModelResponse = await axios.get(`${apiUrl}/${modelId}`, {
+            headers: {
+              Authorization: `Bearer ${apiKey}`,
+            },
+          });
+          console.log("getModelResponse:", getModelResponse.data);
       
+          if (getModelResponse.data && getModelResponse.data.progress >= 100) {
+            console.log(
+              "3D Model URLs (glb):",
+              getModelResponse.data.model_urls.glb
+            );
+            setModelUrls(getModelResponse.data.model_urls.glb); // shd setModelUrls inside the 100% check
+            clearInterval(checkModelProgress); // this is to ensure this runs immediately after the condition is true
+          } else {
+            console.log("Model Loading Progress:", getModelResponse.data.progress);
+          }
+        } catch (error) {
+          console.error("Error checking model progress:", error);
+          clearInterval(checkModelProgress); // To clear the interval on error to prevent infinite loops
+        }
+      }, 1 * 60 * 1000); 
+      
+    
     } catch (error) {
-      console.error('Error creating 3D model:', error);
+      console.error("Error creating 3D model:", error);
     }
   };
 
   return (
-    <div>
-      <input
-        type="text"
-        value={prompt}
-        onChange={(e) => setPrompt(e.target.value)}
-        placeholder="Enter prompt for 3D model"
-      />
-      <button onClick={promptSubmit}>Submit</button>
+    <div className="home">
+      <div className="home-prompt">
+        <input
+          id="1"
+          type="text"
+          value={prompt}
+          onChange={function (e) { setPrompt(e.target.value); }}
+          placeholder="Add 3D to the Instsallation. A Unicorn?"
+        />
+        <button onClick={promptSubmit}>Submit</button>
+      </div>
+      <div>
+        <ModelUploader newModel={modelUrls} />
+      </div>
+      <div className="home-index">
+      <h1><a href="#architecture">Architecture</a></h1>
+          <h1><a href="#ar-vr-xr">AR/VR/XR</a></h1>
+          <h1><a href="#cooking">Cooking</a></h1>
+          <h1><a href="#painting">Painting</a></h1>
+          <h1><a href="#web-design">Web Design/Development</a></h1>
+          <h1><a href="#ai-robotics">AI/Robotics</a></h1>
+          <h1><a href="#gaming">Gaming</a></h1>
+          <h1><a href="#Resume">Gaming</a></h1>
+      </div>
     </div>
   );
 };

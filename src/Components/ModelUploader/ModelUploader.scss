@@ -1,0 +1,10 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as*;
+
+
+.canvas{
+  background-color:$vampire-black;
+  height: 95vh;
+  width: 100vw;
+}

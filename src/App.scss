@@ -1,4 +1,39 @@
-#root{
-  width: 100%;
-  text-align: center;
+@use './styles/partials/variables' as *;
+@use './styles/partials/typography' as *;
+
+body {
+    font-family: 'Inter var', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: url('../src/assets/Icons/PointerIcon\ 1.svg'), auto;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Antonio', sans-serif;
+    color: $cornflower-blue;
+}
+
+p {
+    color: $dark-charcoal;
+
+    &.small {
+        font-size: 0.75rem;
+        line-height: 1.125rem;
+    }
+
+    &.large {
+        font-size: 1rem;
+        line-height: 1.75rem;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: $jordy-blue;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
 }
