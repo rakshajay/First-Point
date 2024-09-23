@@ -3,8 +3,8 @@
 @use "../src/styles/partials/typography" as *;
 
 .header{
-    background-color: black;
-    padding: 2rem 2rem ;
+    background-color: $vampire-black;
+    padding: 1rem 1rem ;
     img{
         width: 2rem;
         

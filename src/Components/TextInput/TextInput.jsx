@@ -66,24 +66,31 @@ const TextInput = () => {
   };
 
   return (
-    <>
-      <div className="prompt">
+    <div className="home">
+      <div className="home-prompt">
         <input
           id="1"
           type="text"
           value={prompt}
           onChange={function (e) { setPrompt(e.target.value); }}
-          placeholder="Enter prompt for your own customized 3D model"
+          placeholder="Add 3D to the Instsallation. A Unicorn?"
         />
         <button onClick={promptSubmit}>Submit</button>
       </div>
-      <div className="canvas">
+      <div>
         <ModelUploader newModel={modelUrls} />
       </div>
-      <button style={{ position: "absolute", bottom: 20, right: 20, zIndex: 10 }}>
-      
-      </button>
-    </>
+      <div className="home-index">
+      <h1><a href="#architecture">Architecture</a></h1>
+          <h1><a href="#ar-vr-xr">AR/VR/XR</a></h1>
+          <h1><a href="#cooking">Cooking</a></h1>
+          <h1><a href="#painting">Painting</a></h1>
+          <h1><a href="#web-design">Web Design/Development</a></h1>
+          <h1><a href="#ai-robotics">AI/Robotics</a></h1>
+          <h1><a href="#gaming">Gaming</a></h1>
+          <h1><a href="#Resume">Gaming</a></h1>
+      </div>
+    </div>
   );
 };
 

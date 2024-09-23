@@ -1,3 +1,4 @@
+import "./ModelUploader.scss";
 import * as THREE from "three";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Environment, useGLTF, Reflector } from "@react-three/drei";
@@ -46,7 +47,7 @@ const ModelUploader = ({ newModel }) => {
     setModels([bikeModel]);
   }, [bikeModel]);
 
-  function Clump({
+  function ArtCollection({
     modelData,
     mat = new THREE.Matrix4(),
     vec = new THREE.Vector3(),
@@ -105,6 +106,7 @@ const ModelUploader = ({ newModel }) => {
           receiveShadow
           args={[geometry, null, 40]}
           scale={[1, 1, 1]}
+          position={[0, 0, 0]}
         >
           <primitive attach="material" object={glassMaterial} />
         </instancedMesh>
@@ -114,6 +116,7 @@ const ModelUploader = ({ newModel }) => {
           receiveShadow
           args={[geometry2, null, 20]} // Use geometry for object 2
           scale={[1, 1, 1]} // Scale up on hover
+          position={[0, 0, 0]}
         >
           <primitive attach="material" object={material2} />
         </instancedMesh>
@@ -154,20 +157,19 @@ const ModelUploader = ({ newModel }) => {
   }
 
   return (
-    <>
+    <div className="canvas">
       <Canvas
         shadows
         gl={{ antialias: true, preserveDrawingBuffer: true }}
         dpr={[1, 1.5]}
-        camera={{ position: [0, 0, 25], fov: 35, near: 1, far: 100 }}
+        camera={{ position: [0, 10, 25], fov: 35, near: 1, far: 100 }}
       >
         <ambientLight intensity={0.5} />
-        <color attach="background" args={["#000000"]} />
         <directionalLight intensity={1} position={[1, 10, -6]} castShadow />
         <Physics gravity={[0, 1, 0]} iterations={10} substeps={2}>
           <Pointer />
           {models.map((modelData, index) => (
-            <Clump key={index} modelData={modelData} />
+            <ArtCollection key={index} modelData={modelData} />
           ))}
           <Floor />
         </Physics>
@@ -184,7 +186,7 @@ const ModelUploader = ({ newModel }) => {
           <SMAA />
         </EffectComposer>
       </Canvas>
-    </>
+    </div>
   );
 };
 
