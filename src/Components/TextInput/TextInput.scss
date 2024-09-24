@@ -3,46 +3,44 @@
 @use "../src/styles/partials/typography" as *;
 
 .home {
+  width: 100%;
   &-prompt {
     @include flex-center;
     position: absolute;
     flex-direction: column;
-    top: 56%;
+    top: 22%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
 
     input {
+      width: 80vh;
       padding: .9375rem;
-      width: 100vw;
-      background-color: $dark-charcoal;
+      background-color: transparent;
       color: $jordy-blue;
       text-align: center;
-    }
+      border: none;
+       @include subheader-mobile;
+       cursor: pointer;
+     }
 
     button {
-      width: 100vw;
-      margin-top: 20px;
+      margin-top: .4rem;
       padding: 10px 20px;
-      background-color: $mikado-yellow;
-      color: $vampire-black;
-      border: none;
+      background-color:$vampire-black;
+      color: $jordy-blue;
+      border: $mikado-yellow;
+      border-style: solid;
+      border-width: .04rem;;
       font-size: 1rem;
       cursor: pointer;
+      border-radius: .1rem;
 
       &:hover {
         background-color: $jasmine;
+        color: $vampire-black;
       }
     }
   }
 
-  &-index {
-    @include flex-center;
-    flex-direction: column;
-    width: 100vw;
-    background-color: $vampire-black;
-    position: absolute;
-    z-index: 10;
-    color: $dark-charcoal;
-  }
 }

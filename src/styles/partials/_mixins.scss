@@ -1,6 +1,19 @@
 @use "./variables" as *;
 @use "./typography" as *;
 
+
+@mixin tablet {
+    @media (min-width:48rem) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width:80rem) {
+        @content;
+    }
+}
+
 // Mixin for Font Styles
 @mixin font-style($size, $line-height, $weight: 400) {
     font-size: $size;
@@ -47,7 +60,7 @@
 }
 
 @mixin labels-buttons-mobile {
-    @include font-style(0.7rem, 1.25rem, 600); // Antonio Bold
+    @include font-style(0.7rem, 1.25rem, 300); // Antonio Bold
 }
 
 // Flexbox Mixins

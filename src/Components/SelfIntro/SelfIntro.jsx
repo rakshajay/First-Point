@@ -8,22 +8,18 @@ import { MeshBasicMaterial, MeshStandardMaterial} from 'three';
 
 const My3DModel = () => {
   const { scene,nodes, matrial} = useGLTF(raksha3D);
-   // Traverse the scene and apply both the solid and wireframe materials
+   
    scene.traverse((child) => {
     if (child.isMesh) {
-      // Clone the child mesh to have a wireframe version
       const wireframeMesh = child.clone();
+      child.material = new MeshStandardMaterial({ color: "#8AB9F1" });
 
-      // Apply solid material to the original mesh
-      child.material = new MeshStandardMaterial({ color: 'white' });
-
-      // Apply wireframe material to the cloned mesh
       wireframeMesh.material = new MeshBasicMaterial({
         color: 'black',
         wireframe: true,
       });
 
-      // Add the wireframe mesh to the scene as a sibling of the original mesh
+    
       child.parent.add(wireframeMesh);
     }
   });
@@ -33,6 +29,7 @@ const My3DModel = () => {
 
 const SelfIntro = () => {
   return (
+    <div className="intro">
     <div style={styles.container}>
       <div style={styles.leftSection}>
         <Canvas camera={{ position: [0, 0, 5], fov: 60 }}>
@@ -56,6 +53,7 @@ const SelfIntro = () => {
           <h1><a href="#gaming">Gaming</a></h1>
         </div>
       </div>
+    </div>
     </div>
   );
 };
