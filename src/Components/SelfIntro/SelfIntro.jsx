@@ -30,8 +30,7 @@ const My3DModel = () => {
 const SelfIntro = () => {
   return (
     <div className="intro">
-    <div style={styles.container}>
-      <div style={styles.leftSection}>
+      <div className="intro-canvas">
         <Canvas camera={{ position: [0, 0, 5], fov: 60 }}>
           <OrbitControls enableZoom={false} />
           <ambientLight intensity={0.5} />
@@ -40,10 +39,10 @@ const SelfIntro = () => {
         </Canvas>
       </div>
 
-      <div id="text" >
+      <div className="intro-text" >
         <h2>About Me</h2>
-        <p>Hi, I'm Raksha, an architect and tech enthusiast. My portfolio showcases my diverse passions and projects that blend creativity and technology.</p>
-        <div>
+        <p>Hi, I'm Raksha, an architect venturing into tech. My portfolio showcases my diverse passions and projects that blend creativity and technology.</p>
+        <div className="intro-text_index">
           <h1><a href="#architecture">Architecture</a></h1>
           <h1><a href="#ar-vr-xr">AR/VR/XR</a></h1>
           <h1><a href="#cooking">Cooking</a></h1>
@@ -52,32 +51,9 @@ const SelfIntro = () => {
           <h1><a href="#ai-robotics">AI/Robotics</a></h1>
           <h1><a href="#gaming">Gaming</a></h1>
         </div>
-      </div>
     </div>
     </div>
   );
-};
-
-const styles = {
-  container: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    padding: '20px',
-  },
-  leftSection: {
-    width: '50%',
-    height: '100vh',
-  },
-  rightSection: {
-    width: '40%',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    padding: '20px',
-  },
-  linksSection: {
-    marginTop: '20px',
-  },
 };
 
 export default SelfIntro;
