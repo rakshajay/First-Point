@@ -1,7 +1,7 @@
 import "./ModelUploader.scss";
 import * as THREE from "three";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Environment, useGLTF, Reflector } from "@react-three/drei";
+import {  OrbitControls, Environment, useGLTF, Reflector, Text } from "@react-three/drei";
 import { Physics, useBox, useSphere } from "@react-three/cannon";
 import { useEffect, useRef, useState } from "react";
 import hdr from "../../assets/hdr/adamsbridge.hdr";
@@ -129,12 +129,12 @@ const ModelUploader = ({ newModel }) => {
       type: "Static",
       mass: 1,
       position: [0, 0, 0],
-      args: [10, 1, 10],
+      args: [40, 2, 10],
     }));
 
     return (
       <mesh ref={ref} receiveShadow>
-        <boxGeometry args={[40, 3, 0]} />
+        <boxGeometry args={[280, 3, .3]} />
         <meshStandardMaterial color="black" />
       </mesh>
     );
@@ -173,6 +173,14 @@ const ModelUploader = ({ newModel }) => {
           ))}
           <Floor />
         </Physics>
+        <OrbitControls
+  enableZoom={false}               // Enables zooming with scroll
+  minPolarAngle={Math.PI / 4}     // Minimum vertical angle (upwards)
+  maxPolarAngle={Math.PI / 2}     // Maximum vertical angle (downwards)
+  minAzimuthAngle={-Math.PI / 4}  // Minimum horizontal rotation angle (left)
+  maxAzimuthAngle={Math.PI / 8}   // Maximum horizontal rotation angle (right)
+/>
+
         <Environment files={hdr} />
         <EffectComposer disableNormalPass multisampling={0}>
           <N8AO
@@ -186,6 +194,27 @@ const ModelUploader = ({ newModel }) => {
           <SMAA />
         </EffectComposer>
       </Canvas>
+      <div className="canvas-index">
+        <div>
+          <h1>ME</h1>
+          <p>Resume</p>
+        </div>
+        <div className="canvas-index_projects">
+          <h4>PROJECTS</h4>
+          <div className="canvas-index_projects-sec">
+          <div className="canvas-index_projects-sec-row">
+            <p>Architecture</p>
+            <p>AR/VR/XR</p>
+            <p>Paintings</p>
+          </div>
+          <div className="canvas-index_projects-sec-row">
+            <p>Wed dev</p>
+            <p>AI/Robotics</p>
+            <p>Cooking</p>
+          </div>
+        </div>
+        </div>
+      </div>
     </div>
   );
 };

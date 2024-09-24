@@ -8,9 +8,8 @@ const TextInput = () => {
   const [modelId, setModelId] = useState(null);
   const [modelUrls, setModelUrls] = useState(null);
 
-  const apiUrl = import.meta.env.API_URL;
-  const apiKey = import.meta.env.API_CODE;
-  
+  const apiUrl = import.meta.env.VITE_API_URL;
+  const apiKey = import.meta.env.VITE_API_CODE;
 
   const promptSubmit = async () => {
     try {
@@ -73,22 +72,15 @@ const TextInput = () => {
           type="text"
           value={prompt}
           onChange={function (e) { setPrompt(e.target.value); }}
-          placeholder="Add 3D to the Instsallation. A Unicorn?"
+          placeholder="Type your fav object here"
         />
         <button onClick={promptSubmit}>Submit</button>
       </div>
       <div>
         <ModelUploader newModel={modelUrls} />
+        <div className="home-index">
+      
       </div>
-      <div className="home-index">
-      <h1><a href="#architecture">Architecture</a></h1>
-          <h1><a href="#ar-vr-xr">AR/VR/XR</a></h1>
-          <h1><a href="#cooking">Cooking</a></h1>
-          <h1><a href="#painting">Painting</a></h1>
-          <h1><a href="#web-design">Web Design/Development</a></h1>
-          <h1><a href="#ai-robotics">AI/Robotics</a></h1>
-          <h1><a href="#gaming">Gaming</a></h1>
-          <h1><a href="#Resume">Gaming</a></h1>
       </div>
     </div>
   );
