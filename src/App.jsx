@@ -7,6 +7,7 @@ import SelfIntro from './Components/SelfIntro/SelfIntro';
 import Architecture from './pages/Architecture/Architecture';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
+import ImageModal from './Components/ImageModal/ImageModal';
 
 function App() {
   return (

@@ -174,11 +174,11 @@ const ModelUploader = ({ newModel }) => {
           <Floor />
         </Physics>
         <OrbitControls
-  enableZoom={false}               // Enables zooming with scroll
-  minPolarAngle={Math.PI / 4}     // Minimum vertical angle (upwards)
-  maxPolarAngle={Math.PI / 2}     // Maximum vertical angle (downwards)
-  minAzimuthAngle={-Math.PI / 4}  // Minimum horizontal rotation angle (left)
-  maxAzimuthAngle={Math.PI / 8}   // Maximum horizontal rotation angle (right)
+  enableZoom={false}               
+  minPolarAngle={Math.PI / 4}     
+  maxPolarAngle={Math.PI / 2}     
+  minAzimuthAngle={-Math.PI / 4}  
+  maxAzimuthAngle={Math.PI / 8}   
 />
 
         <Environment files={hdr} />

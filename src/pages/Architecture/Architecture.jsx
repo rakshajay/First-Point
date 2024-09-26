@@ -1,38 +1,37 @@
-// Architecture.jsx
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import GalleryCard from '../../Components/GalleryCard/GalleryCard';
-
-const projects = [
-  {
-    id: '1',
-    title: 'Cogni-Craft',
-    subTitle: 'Master Thesis (Neuroscience, Architecture, AI)',
-    mainImage: 'Thesis1.1',
-    gallery: [
-      { id: '1.1', description: 'SCI-Arc EDGE Symposium, application demo-live', image: 'Thesis1' },
-      { id: '1.2', description: 'SCI-Arc EDGE Symposium, application demo and result', image: 'Thesis' },
-      // more images...
-    ],
-    date: 'Sep-2023',
-    workedWith: 'SCI-Arc',
-    description: 'This app, developed for my thesis...',
-    softwares: {
-      concept: 'Miro, Figma',
-      rendering: 'Unreal engine',
-      presentation: 'Adobe Premier Pro, Photoshop, Illustrator',
-      technology: 'Stable diffusion, Chat-GPT API',
-      device: 'UltraCortex EEG device',
-      codingLanguages: 'Python'
-    },
-    videoThumbnail: 'thesis4',
-    video: 'https://www.facebook.com/ZoyaJewels/videos/546032976082663/',
-    category: ['Architecture', 'Technology', 'AI'],
-    publications: ''
-  },
-  // Add other project objects here...
-];
+import './Architecture.scss'; // Assuming you have styles
 
 const Architecture = () => {
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // Get server URL from environment variables
+  const serverURL = import.meta.env.VITE_SERVER_URL; // Assuming VITE_API_CODE is set in your .env file
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        // Make an Axios call to the backend
+        const response = await axios.get(`${serverURL}/architecture`);
+        setProjects(response.data);
+        console.log("response.data", response.data)
+        setLoading(false);
+      } catch (err) {
+        console.error('Error fetching projects:', err);
+        setError('Error fetching projects data');
+        setLoading(false);
+      }
+    };
+
+    fetchProjects();
+  }, [serverURL]);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>{error}</div>;
+
   return (
     <div className="architecture-container">
       {projects.map((project) => (
