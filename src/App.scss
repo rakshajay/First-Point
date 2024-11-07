@@ -3,19 +3,21 @@
 
 body {
     font-family: 'Inter var', sans-serif;
+    width: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: $vampire-black;
     cursor: url('../src/assets/Icons/PointerIcon\ 1.svg'), auto;
 }
 
 h1, h2, h3, h4 {
     font-family: 'Antonio', sans-serif;
-    color: $cornflower-blue;
 }
 
 p {
-    color: $dark-charcoal;
+    color: $jasmine;
+    margin: 0;
 
     &.small {
         font-size: 0.75rem;
@@ -30,7 +32,6 @@ p {
 
 a {
     text-decoration: none;
-    color: $jordy-blue;
 }
 
 ul {

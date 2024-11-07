@@ -8,22 +8,18 @@ import { MeshBasicMaterial, MeshStandardMaterial} from 'three';
 
 const My3DModel = () => {
   const { scene,nodes, matrial} = useGLTF(raksha3D);
-   // Traverse the scene and apply both the solid and wireframe materials
+   
    scene.traverse((child) => {
     if (child.isMesh) {
-      // Clone the child mesh to have a wireframe version
       const wireframeMesh = child.clone();
+      child.material = new MeshStandardMaterial({ color: "#8AB9F1" });
 
-      // Apply solid material to the original mesh
-      child.material = new MeshStandardMaterial({ color: 'white' });
-
-      // Apply wireframe material to the cloned mesh
       wireframeMesh.material = new MeshBasicMaterial({
         color: 'black',
         wireframe: true,
       });
 
-      // Add the wireframe mesh to the scene as a sibling of the original mesh
+    
       child.parent.add(wireframeMesh);
     }
   });
@@ -33,8 +29,8 @@ const My3DModel = () => {
 
 const SelfIntro = () => {
   return (
-    <div style={styles.container}>
-      <div style={styles.leftSection}>
+    <div className="intro">
+      <div className="intro-canvas">
         <Canvas camera={{ position: [0, 0, 5], fov: 60 }}>
           <OrbitControls enableZoom={false} />
           <ambientLight intensity={0.5} />
@@ -43,10 +39,10 @@ const SelfIntro = () => {
         </Canvas>
       </div>
 
-      <div id="text" >
+      <div className="intro-text" >
         <h2>About Me</h2>
-        <p>Hi, I'm Raksha, an architect and tech enthusiast. My portfolio showcases my diverse passions and projects that blend creativity and technology.</p>
-        <div>
+        <p>Hi, I’m Raksha Shetty, an architect turned tech enthusiast with a passion for blending design, code, and immersive experiences. With a Master’s in Architectural Technologies, I explore the intersection of AI, AR/VR, and digital art to create innovative, interactive environments. From designing spaces to building dynamic 3D experiences, I’m always excited about pushing the boundaries of what’s possible through technology.</p>
+        <div className="intro-text_index">
           <h1><a href="#architecture">Architecture</a></h1>
           <h1><a href="#ar-vr-xr">AR/VR/XR</a></h1>
           <h1><a href="#cooking">Cooking</a></h1>
@@ -55,31 +51,9 @@ const SelfIntro = () => {
           <h1><a href="#ai-robotics">AI/Robotics</a></h1>
           <h1><a href="#gaming">Gaming</a></h1>
         </div>
-      </div>
+    </div>
     </div>
   );
-};
-
-const styles = {
-  container: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    padding: '20px',
-  },
-  leftSection: {
-    width: '50%',
-    height: '100vh',
-  },
-  rightSection: {
-    width: '40%',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    padding: '20px',
-  },
-  linksSection: {
-    marginTop: '20px',
-  },
 };
 
 export default SelfIntro;

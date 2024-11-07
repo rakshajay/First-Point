@@ -6,8 +6,8 @@ import { Suspense } from "react";
 import SelfIntro from './Components/SelfIntro/SelfIntro';
 import Architecture from './pages/Architecture/Architecture';
 import Header from './Components/Header/Header';
-
-
+import Footer from './Components/Footer/Footer';
+import Resume from './Components/Resume/Resume';
 
 function App() {
   return (
@@ -23,11 +23,15 @@ function App() {
                   element={<SelfIntro />}
                 />
                 <Route
-                  path="/Architecture"
+                  path="/resume"
+                  element={<Resume />}
+                />
+                <Route
+                  path="/architecture"
                   element={<Architecture />}
                 />
                 </Routes>
-                
+                <Footer />
   </BrowserRouter>
   )
 }

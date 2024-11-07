@@ -5,6 +5,77 @@
 
 .canvas{
   background-color:$vampire-black;
-  height: 95vh;
-  width: 100vw;
+  height: 90vh;
+  width: 100%;
+  position: relative;
+  
+   text{
+    @include page-header-mobile;
+   }
+
+  &-index {
+    @include flex-space-between;
+    flex-direction: row;
+     z-index: 18;
+    position: absolute;
+    bottom:2rem;
+    padding: 0 1rem 1rem 1rem;
+    gap:2rem;
+    cursor: pointer;
+    h1{
+      font-size: 3rem;
+      color: $mikado-yellow;
+      z-index: 14;
+      margin: 0 1rem 1rem 0;
+      &:hover{
+        color: $jordy-blue;
+      }
+    }
+    p{
+      @include subheader-mobile;
+      color: $light-charcoal;
+      &:hover{
+        color: $jordy-blue;
+      }
+    }
+    &_projects{
+      display: flex;
+      flex-direction: column;
+      h4{
+        color: $mikado-yellow;
+        z-index: 14;
+        margin: .6rem .7rem .7rem 0;
+        &:hover{
+          color: $jordy-blue;
+        }
+        @include desktop{
+          font-size: 8rem;
+          margin: 0 1rem .4rem 0;
+      }}
+      &-sec{
+        @include flex-center;
+        flex-direction: row;
+        gap:2rem;
+        &-row{
+          @include desktop{
+            @include flex-center;
+          flex-direction: row;
+          gap:1rem;
+          }
+        }
+        @include desktop{
+          justify-content: flex-end;
+          gap:1rem;
+        }
+        
+      }
+      @include desktop{
+        align-items: flex-end;
+      }
+    }
+     @include desktop{
+        align-items: flex-end;
+        padding: 0 2rem 0rem 2rem;
+      }
+  }
 }
