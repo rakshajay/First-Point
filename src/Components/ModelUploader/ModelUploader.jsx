@@ -1,15 +1,23 @@
 import "./ModelUploader.scss";
 import * as THREE from "three";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import {  OrbitControls, Environment, useGLTF, Reflector, Text } from "@react-three/drei";
+import {
+  OrbitControls,
+  Environment,
+  useGLTF,
+  Reflector,
+  Text,
+} from "@react-three/drei";
 import { Physics, useBox, useSphere } from "@react-three/cannon";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import hdr from "../../assets/hdr/adamsbridge.hdr";
 import giraffe from "../../assets/3DModels/model (19).glb";
 import bike from "../../assets/3DModels/bike.glb";
 import { EffectComposer, N8AO, SMAA } from "@react-three/postprocessing";
+import { Link } from "react-router-dom";
 
 const rfs = THREE.MathUtils.randFloatSpread;
+
 const glassMaterial = new THREE.MeshPhysicalMaterial({
   color: 0x87ccee,
   metalness: 1.6,
@@ -26,6 +34,7 @@ const glassMaterial = new THREE.MeshPhysicalMaterial({
 const ModelUploader = ({ newModel }) => {
   const [models, setModels] = useState([]);
   //console.log("newModel", newModel)
+  const directionalLightRef = useRef();
 
   // Load the giraffe model initially
   const { nodes: nodes2, scene: scene2 } = useGLTF(giraffe);
@@ -133,8 +142,8 @@ const ModelUploader = ({ newModel }) => {
     }));
 
     return (
-      <mesh ref={ref} receiveShadow>
-        <boxGeometry args={[280, 3, .3]} />
+      <mesh ref={ref} castShadow receiveShadow>
+        <boxGeometry args={[280, 3, 0.3]} />
         <meshStandardMaterial color="black" />
       </mesh>
     );
@@ -159,13 +168,18 @@ const ModelUploader = ({ newModel }) => {
   return (
     <div className="canvas">
       <Canvas
-        shadows
+        shadows={true}
         gl={{ antialias: true, preserveDrawingBuffer: true }}
         dpr={[1, 1.5]}
         camera={{ position: [0, 10, 25], fov: 35, near: 1, far: 100 }}
       >
         <ambientLight intensity={0.5} />
-        <directionalLight intensity={1} position={[1, 10, -6]} castShadow />
+        <directionalLight
+          ref={directionalLightRef} // Assign ref to directional light
+          intensity={1}
+          position={[1, 10, -6]}
+          castShadow
+        />
         <Physics gravity={[0, 1, 0]} iterations={10} substeps={2}>
           <Pointer />
           {models.map((modelData, index) => (
@@ -174,12 +188,12 @@ const ModelUploader = ({ newModel }) => {
           <Floor />
         </Physics>
         <OrbitControls
-  enableZoom={false}               
-  minPolarAngle={Math.PI / 4}     
-  maxPolarAngle={Math.PI / 2}     
-  minAzimuthAngle={-Math.PI / 4}  
-  maxAzimuthAngle={Math.PI / 8}   
-/>
+          enableZoom={false}
+          minPolarAngle={Math.PI / 4}
+          maxPolarAngle={Math.PI / 2}
+          minAzimuthAngle={-Math.PI / 4}
+          maxAzimuthAngle={Math.PI / 8}
+        />
 
         <Environment files={hdr} />
         <EffectComposer disableNormalPass multisampling={0}>
@@ -196,23 +210,29 @@ const ModelUploader = ({ newModel }) => {
       </Canvas>
       <div className="canvas-index">
         <div>
-          <h1>ME</h1>
-          <p>Resume</p>
+          <Link to="/intro">
+            <h1>ME</h1>
+          </Link>
+          <Link to="/resume">
+            <p>Resume</p>
+          </Link>
         </div>
         <div className="canvas-index_projects">
           <h4>PROJECTS</h4>
           <div className="canvas-index_projects-sec">
-          <div className="canvas-index_projects-sec-row">
-            <p>Architecture</p>
-            <p>AR/VR/XR</p>
-            <p>Paintings</p>
+            <div className="canvas-index_projects-sec-row">
+              <Link to="/architecture">
+                <p>Architecture</p>
+              </Link>
+              <p>AR/VR/XR</p>
+              <p>Paintings</p>
+            </div>
+            <div className="canvas-index_projects-sec-row">
+              <p>Wed dev</p>
+              <p>AI/Robotics</p>
+              <p>Cooking</p>
+            </div>
           </div>
-          <div className="canvas-index_projects-sec-row">
-            <p>Wed dev</p>
-            <p>AI/Robotics</p>
-            <p>Cooking</p>
-          </div>
-        </div>
         </div>
       </div>
     </div>

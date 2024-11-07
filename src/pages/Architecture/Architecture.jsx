@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import GalleryCard from '../../Components/GalleryCard/GalleryCard';
-import './Architecture.scss'; // Assuming you have styles
+
 
 const Architecture = () => {
   const [projects, setProjects] = useState([]);
@@ -9,7 +9,7 @@ const Architecture = () => {
   const [error, setError] = useState(null);
 
   // Get server URL from environment variables
-  const serverURL = import.meta.env.VITE_SERVER_URL; // Assuming VITE_API_CODE is set in your .env file
+  const serverURL = process.env.VITE_SERVER_URL; // Assuming VITE_API_CODE is set in your .env file
 
   useEffect(() => {
     const fetchProjects = async () => {

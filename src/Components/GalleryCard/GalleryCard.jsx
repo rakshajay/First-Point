@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './GalleryCard.scss';
+import './ArchiGalleryCard.scss';
 import ImageModal from '../ImageModal/ImageModal'; // Import your modal component
 
 const serverURL = import.meta.env.VITE_SERVER_URL;
