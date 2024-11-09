@@ -2,19 +2,19 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import GalleryCard from '../../Components/GalleryCard/GalleryCard';
 
-const Architecture = () => {
+const webdev = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   // Get server URL from environment variables
-  const serverURL = import.meta.env.VITE_SERVER_URL; // Assuming VITE_API_CODE is set in your .env file
+  const serverURL = import.meta.env.VITE_SERVER_URL; // VITE_API_CODE is set in your .env file
 
   useEffect(() => {
     const fetchProjects = async () => {
       try {
         // Make an Axios call to the backend
-        const response = await axios.get(`${serverURL}/architecture`);
+        const response = await axios.get(`${serverURL}/webdev`);
         setProjects(response.data);
         console.log("response.data", response.data)
         setLoading(false);
@@ -32,7 +32,7 @@ const Architecture = () => {
   if (error) return <div>{error}</div>;
 
   return (
-    <div className="architecture-container">
+    <div className="webdev-container">
       {projects.map((project) => (
         <GalleryCard key={project.id} project={project} />
       ))}
@@ -40,4 +40,4 @@ const Architecture = () => {
   );
 };
 
-export default Architecture;
+export default webdev;
