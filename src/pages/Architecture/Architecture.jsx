@@ -9,7 +9,7 @@ const Architecture = () => {
   const [error, setError] = useState(null);
 
   // Get server URL from environment variables
-  const serverURL = process.env.VITE_SERVER_URL; // Assuming VITE_API_CODE is set in your .env file
+  const serverURL = import.meta.env.VITE_SERVER_URL; //VITE_API_CODE is set in your .env file
 
   useEffect(() => {
     const fetchProjects = async () => {
