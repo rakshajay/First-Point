@@ -18,6 +18,7 @@ const webdev = () => {
         setProjects(response.data);
         setLoading(false);
         console.log(response.data)
+        console.log("serverURL", serverURL)
       } catch (err) {
         console.error('Error fetching projects:', err);
         setError('Error fetching projects data');
