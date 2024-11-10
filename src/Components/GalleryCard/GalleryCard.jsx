@@ -3,7 +3,7 @@ import './GalleryCard.scss';
 import { useNavigate } from 'react-router-dom';
 import ImageModal from '../ImageModal/ImageModal'; // Import your modal component
 
-const serverURL = import.meta.env.VITE_SERVER_URL;
+const serverURL = "https://portfolio-backend-sa3o.onrender.com"
 
 const GalleryCard = ({ project }) => {
   const [modalOpen, setModalOpen] = useState(false);

@@ -9,8 +9,7 @@ const Architecture = () => {
   const [error, setError] = useState(null);
 
   // Get server URL from environment variables
-  const serverURL = import.meta.env.VITE_SERVER_URL; //VITE_API_CODE is set in your .env file
-
+const serverURL = "https://portfolio-backend-sa3o.onrender.com"
   useEffect(() => {
     const fetchProjects = async () => {
       try {
