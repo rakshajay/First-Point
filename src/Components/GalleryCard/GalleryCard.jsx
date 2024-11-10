@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './GalleryCard.scss';
+import { useNavigate } from 'react-router-dom';
 import ImageModal from '../ImageModal/ImageModal'; // Import your modal component
 
 const serverURL = import.meta.env.VITE_SERVER_URL;
@@ -7,7 +8,7 @@ const serverURL = import.meta.env.VITE_SERVER_URL;
 const GalleryCard = ({ project }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null); // Track the selected image
-
+  const navigate = useNavigate(); 
   const displayModal = (image) => {
     setSelectedImage(image); // Set the clicked image
     setModalOpen(true); // Open the modal
@@ -17,15 +18,16 @@ const GalleryCard = ({ project }) => {
     setModalOpen(false); // Close the modal
   };
 
+
   return (
     <div className="project-card">
-      <img src={`${serverURL}/${project.mainImage}`} alt={project.title} className="project-image" />
+      <a href={project.link}><img src={`${serverURL}/${project.mainImage}`} alt={project.title} className="project-image"/></a>
       <h2>{project.title}</h2>
       <h3>{project.subTitle}</h3>
       <div className="project-details">
         <p><strong>Date:</strong> {project.date}</p>
         <p><strong>Worked With:</strong> {project.workedWith}</p>
-        <p id="small">{project.description}</p>
+        <p id="small" >{project.description}</p>
       </div>
       <div className="project-gallery">
         {project.gallery.map((item) => (
