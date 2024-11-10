@@ -101,7 +101,7 @@ POST /comments: Add a new comment or feedback from a user
 
 ---
 
-##[Backend](https://github.com/rakshajay/First-Point--Server)
+##[Link to Backend repo](https://github.com/rakshajay/First-Point--Server)
 
 ## Future Implementations
 
