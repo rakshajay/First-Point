@@ -1,36 +1,68 @@
+@use "../src/styles/partials/mixins" as *;
+@use "../src/styles/partials/variables" as *;
+@use "../src/styles/partials/typography" as *;
+
 .architecture-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
   }
+
+.webdev-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
   
   .project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     border: 1px solid #ccc;
+    margin: 0 1rem 1rem 1rem;
     padding: 20px;
-    width: 300px;
+    width: 19.75rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+    h2 {
+      color: $jordy-blue;
+    }
+  
+    h3 {
+      color: $jasmine;
+    }
   
     .project-image {
       width: 100%;
-      height: auto;
+      object-fit: cover;
     }
   
     .project-details {
       margin-top: 10px;
+      
       p {
         margin: 5px 0;
+      }
+      
+      #small {
+        @include body-copy-mobile;
+        color: $light-charcoal;
       }
     }
   
     .project-gallery {
       display: flex;
-      gap: 10px;
+      gap: 6px;
+      flex-grow: 1; // Allow this section to grow and take up remaining space
       margin-top: 15px;
   
       .gallery-item {
+        display: flex;
+        flex: 1; // Allow the items to take up equal space
         img {
-          width: 50px;
-          height: 50px;
+          width: 100%; // Make the image take the full width of its container // Make the image take the full height of the remaining space
+          object-fit: cover; // Ensure the image fits and is cropped as necessary
         }
       }
     }
