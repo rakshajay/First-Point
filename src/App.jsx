@@ -6,6 +6,7 @@ import { Suspense } from "react";
 import SelfIntro from './Components/SelfIntro/SelfIntro';
 import ProjectGallery from './pages/ProjectGallery/ProjectGallery';
 import AllProjects from './pages/AllProjects/AllProjects';
+import OnBuild from './Components/OnBuild/OnBuild';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import Resume from './Components/Resume/Resume';
@@ -32,8 +33,24 @@ function App() {
                   element={<ProjectGallery />}
                 />
                 <Route
+                  path="/OnBuild"
+                  element={<OnBuild />}
+                />
+                <Route
+                  path="/OnBuild"
+                  element={<OnBuild />}
+                />
+                <Route
                   path="/webdev"
                   element={<ProjectGallery />}
+                />
+                <Route
+                  path="/OnBuild"
+                  element={<OnBuild />}
+                />
+                <Route
+                  path="/OnBuild"
+                  element={<OnBuild />}
                 />
                 <Route
                   path="/projects"

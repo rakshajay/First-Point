@@ -216,20 +216,28 @@ const ModelUploader = ({ newModel }) => {
           <Link to="/Projects">
             <h4>PROJECTS</h4>
           </Link>
-          <div className="canvas-index_projects-sec">
+          <div id="check" className="canvas-index_projects-sec">
             <div className="canvas-index_projects-sec-row">
-              <Link to="/architecture">
-                <p>Architecture</p>
+              <Link  to="/architecture">
+                <p >Architecture</p>
               </Link>
+              <Link to="/OnBuild">
               <p>AR/VR/XR</p>
+              </Link>
+              <Link to="/OnBuild">
               <p>Paintings</p>
+              </Link>
             </div>
             <div className="canvas-index_projects-sec-row">
               <Link to="/webdev">
                 <p>Wed dev</p>
               </Link>
+              <Link to="/OnBuild">
               <p>AI/Robotics</p>
-              <p>Cooking</p>
+              </Link>
+              <Link to="/OnBuild">
+              <p>Cook</p>
+              </Link>
             </div>
           </div>
         </div>
