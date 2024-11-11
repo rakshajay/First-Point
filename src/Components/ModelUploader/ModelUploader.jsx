@@ -1,9 +1,9 @@
 import "./ModelUploader.scss";
 import * as THREE from "three";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import {OrbitControls,Environment,useGLTF,} from "@react-three/drei";
+import { OrbitControls, Environment, useGLTF } from "@react-three/drei";
 import { Physics, useBox, useSphere } from "@react-three/cannon";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, memo } from "react";
 import hdr from "../../assets/hdr/adamsbridge.hdr";
 import giraffe from "../../assets/3DModels/model (19).glb";
 import bike from "../../assets/3DModels/bike.glb";
@@ -27,7 +27,6 @@ const glassMaterial = new THREE.MeshPhysicalMaterial({
 
 const ModelUploader = ({ newModel }) => {
   const [models, setModels] = useState([]);
-  //console.log("newModel", newModel)
   const directionalLightRef = useRef();
 
   // Load the giraffe model initially
@@ -45,7 +44,9 @@ const ModelUploader = ({ newModel }) => {
       setModels((prevModels) => [...prevModels, newModelData]);
     }
   }, [newModel, newModelData]);
+
   const bikeModel = useGLTF(bike);
+
   useEffect(() => {
     setModels([bikeModel]);
   }, [bikeModel]);
@@ -212,21 +213,31 @@ const ModelUploader = ({ newModel }) => {
           </Link>
         </div>
         <div className="canvas-index_projects">
-          <h4>PROJECTS</h4>
-          <div className="canvas-index_projects-sec">
+          <Link to="/Projects">
+            <h4>PROJECTS</h4>
+          </Link>
+          <div id="check" className="canvas-index_projects-sec">
             <div className="canvas-index_projects-sec-row">
-              <Link to="/architecture">
-                <p>Architecture</p>
+              <Link  to="/architecture">
+                <p >Architecture</p>
               </Link>
+              <Link to="/OnBuild">
               <p>AR/VR/XR</p>
+              </Link>
+              <Link to="/OnBuild">
               <p>Paintings</p>
+              </Link>
             </div>
             <div className="canvas-index_projects-sec-row">
-            <Link to="/webdev">
-              <p>Wed dev</p>
+              <Link to="/webdev">
+                <p>Wed dev</p>
               </Link>
+              <Link to="/OnBuild">
               <p>AI/Robotics</p>
-              <p>Cooking</p>
+              </Link>
+              <Link to="/OnBuild">
+              <p>Cook</p>
+              </Link>
             </div>
           </div>
         </div>
@@ -235,4 +246,4 @@ const ModelUploader = ({ newModel }) => {
   );
 };
 
-export default ModelUploader;
+export default memo(ModelUploader);

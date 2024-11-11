@@ -3,6 +3,7 @@
 @use "../src/styles/partials/typography" as *;
 
 .footer {
+  cursor: auto;
   background-color:$vampire-black;
   padding: .375rem;
   position: fixed;

@@ -1,0 +1,12 @@
+@use "../src/styles/partials/mixins" as *;
+@use "../src/styles/partials/variables" as *;
+
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.loading-container {
+  @include loading-spinner(#FFC40C);
+}

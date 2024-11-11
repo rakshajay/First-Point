@@ -45,12 +45,13 @@
         color: $mikado-yellow;
         z-index: 14;
         margin: .6rem .7rem .7rem 0;
+        letter-spacing: 2px;
         &:hover{
           color: $jordy-blue;
         }
         @include desktop{
           font-size: 8rem;
-          margin: 0 1rem .4rem 0;
+          margin: 0 -.6rem .4rem 0;
       }}
       &-sec{
         @include flex-center;

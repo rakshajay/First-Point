@@ -88,3 +88,25 @@
     align-items: center;
 }
 
+@mixin loading-spinner($color: #FFC40C) {
+    .loading-spinner {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      margin: auto;
+      border: 3px dashed $color; // Allows setting color as an argument
+      border-radius: 50%; // Ensures it’s a circle
+      animation: rotate 1s linear infinite; // Single animation for rotation
+    }
+  }
+  
+  // Keyframes for rotation
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
