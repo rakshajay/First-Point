@@ -1,0 +1,74 @@
+@use "../src/styles/partials/mixins" as *;
+@use "../src/styles/partials/variables" as *;
+
+.project-card {
+  cursor: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  margin: 0 1rem 1rem 1rem;
+  padding: 20px;
+  width: 19.75rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    color: $jordy-blue;
+  }
+
+  h3 {
+    color: $jasmine;
+    letter-spacing: 0.9px;
+    line-height: 1.5;
+  }
+
+  .project-image {
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+
+  }
+
+  .project-details {
+    margin-top: 10px;
+
+    p {
+      margin: 5px 0;
+    }
+
+    #small {
+      @include body-copy-mobile;
+      color: $light-charcoal;
+      line-height: 1.5;
+      letter-spacing: 0.6px;
+      padding: 16px;
+    }
+
+    #bold {
+      color: #706438;
+    }
+  }
+
+  .project-gallery {
+    cursor: pointer;
+    display: flex;
+    gap: 6px;
+    margin-top: 15px;
+    flex-grow: 1;
+
+    &_item {
+      flex: 1;
+      display: flex;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+
+        &:hover {
+          transform: scale(1.15);
+        }
+      }
+    }
+  }
+}
