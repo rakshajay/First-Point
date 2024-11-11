@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import './GalleryCard.scss';
 import { useNavigate } from 'react-router-dom';
 import ImageModal from '../ImageModal/ImageModal'; // Import your modal component
-import { boldWords } from "../../utils/boldwords";
-
 
 const serverURL = "https://portfolio-backend-sa3o.onrender.com"
 
@@ -19,11 +17,7 @@ const GalleryCard = ({ project }) => {
   const closeModal = () => {
     setModalOpen(false); // Close the modal
   };
-  
-  const renderDescription = project.description.split(" ").map((word, index) => {
-    
-    return boldWords.includes(word.replace(/[.,]/g, "")) ? <b id="bold" key={index}>{word} </b> : `${word} `;
-  });
+
 
   return (
     <div className="project-card">
@@ -31,14 +25,13 @@ const GalleryCard = ({ project }) => {
       <h2>{project.title}</h2>
       <h3>{project.subTitle}</h3>
       <div className="project-details">
-        <p>{project.date}</p>
-        <p id="small">{renderDescription}</p>
-
-        <p>Worked With : {project.workedWith}</p>
+        <p><strong>Date:</strong> {project.date}</p>
+        <p><strong>Worked With:</strong> {project.workedWith}</p>
+        <p id="small" >{project.description}</p>
       </div>
       <div className="project-gallery">
         {project.gallery.map((item) => (
-          <div key={item.id} className="project-gallery_item">
+          <div key={item.id} className="gallery-item">
             <img 
               onClick={() => displayModal(item.image)} // Display the modal on click
               src={`${serverURL}/${item.image}`} 
