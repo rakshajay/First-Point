@@ -1,74 +1,70 @@
 @use "../src/styles/partials/mixins" as *;
 @use "../src/styles/partials/variables" as *;
+@use "../src/styles/partials/typography" as *;
 
-.project-card {
-  cursor: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border: 1px solid #ccc;
-  margin: 0 1rem 1rem 1rem;
-  padding: 20px;
-  width: 19.75rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
-  h2 {
-    color: $jordy-blue;
-  }
-
-  h3 {
-    color: $jasmine;
-    letter-spacing: 0.9px;
-    line-height: 1.5;
-  }
-
-  .project-image {
-    width: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-
-  }
-
-  .project-details {
-    margin-top: 10px;
-
-    p {
-      margin: 5px 0;
-    }
-
-    #small {
-      @include body-copy-mobile;
-      color: $light-charcoal;
-      line-height: 1.5;
-      letter-spacing: 0.6px;
-      padding: 16px;
-    }
-
-    #bold {
-      color: #706438;
-    }
-  }
-
-  .project-gallery {
-    cursor: pointer;
+.architecture-container {
     display: flex;
-    gap: 6px;
-    margin-top: 15px;
-    flex-grow: 1;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
 
-    &_item {
-      flex: 1;
+.webdev-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    margin: 0 1rem 1rem 1rem;
+    padding: 20px;
+    width: 19.75rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+    h2 {
+      color: $jordy-blue;
+    }
+  
+    h3 {
+      color: $jasmine;
+    }
+  
+    .project-image {
+      width: 100%;
+      object-fit: cover;
+    }
+  
+    .project-details {
+      margin-top: 10px;
+      
+      p {
+        margin: 5px 0;
+      }
+      
+      #small {
+        @include body-copy-mobile;
+        color: $light-charcoal;
+      }
+    }
+  
+    .project-gallery {
       display: flex;
-
-      img {
-        width: 100%;
-        object-fit: cover;
-        transition: transform 0.6s ease;
-
-        &:hover {
-          transform: scale(1.15);
+      gap: 6px;
+      flex-grow: 1; // Allow this section to grow and take up remaining space
+      margin-top: 15px;
+  
+      .gallery-item {
+        display: flex;
+        flex: 1; // Allow the items to take up equal space
+        img {
+          width: 100%; // Make the image take the full width of its container // Make the image take the full height of the remaining space
+          object-fit: cover; // Ensure the image fits and is cropped as necessary
         }
       }
     }
   }
-}
+  

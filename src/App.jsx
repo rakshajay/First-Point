@@ -1,12 +1,11 @@
 import './App.scss';
-import React from "react";
+import React, { useState } from "react";
 import {BrowserRouter,Routes, Route} from "react-router-dom";
 import TextInput from './Components/TextInput/TextInput';
 import { Suspense } from "react";
 import SelfIntro from './Components/SelfIntro/SelfIntro';
-import ProjectGallery from './pages/ProjectGallery/ProjectGallery';
-import AllProjects from './pages/AllProjects/AllProjects';
-import OnBuild from './Components/OnBuild/OnBuild';
+import Architecture from './pages/Architecture/Architecture';
+import WebDev from './pages/WebDev/WebDev';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import Resume from './Components/Resume/Resume';
@@ -30,31 +29,11 @@ function App() {
                 />
                 <Route
                   path="/architecture"
-                  element={<ProjectGallery />}
-                />
-                <Route
-                  path="/OnBuild"
-                  element={<OnBuild />}
-                />
-                <Route
-                  path="/OnBuild"
-                  element={<OnBuild />}
+                  element={<Architecture />}
                 />
                 <Route
                   path="/webdev"
-                  element={<ProjectGallery />}
-                />
-                <Route
-                  path="/OnBuild"
-                  element={<OnBuild />}
-                />
-                <Route
-                  path="/OnBuild"
-                  element={<OnBuild />}
-                />
-                <Route
-                  path="/projects"
-                  element={<AllProjects />}
+                  element={<WebDev />}
                 />
                 </Routes>
                 <Footer />
