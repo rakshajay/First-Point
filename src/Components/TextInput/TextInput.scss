@@ -4,43 +4,106 @@
 
 .home {
   width: 100%;
+
   &-prompt {
     @include flex-center;
     position: absolute;
     flex-direction: column;
-    top: 22%;
+    gap: 2rem;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
 
-    input {
-      width: 80vh;
-      padding: .9375rem;
-      background-color: transparent;
-      color: $jordy-blue;
+    h2 {
+      color: $jasmine;
       text-align: center;
-      border: none;
-       @include subheader-mobile;
-       cursor: pointer;
-     }
+    }
 
-    button {
-      margin-top: .4rem;
-      padding: 10px 20px;
-      background-color:$vampire-black;
-      color: $jordy-blue;
-      border: $mikado-yellow;
-      border-style: solid;
-      border-width: .04rem;;
-      font-size: 1rem;
+    input {
+      color: $mikado-yellow;
+      width: 16rem;
+      padding: 0.9375rem;
+      background-color: transparent;
+      text-align: center;
+      border: 0.02rem groove $mikado-yellow;
+      border-radius: 0.2rem;
+      @include subheader-mobile;
+      animation: pulse 2s infinite ease-in-out;
       cursor: pointer;
-      border-radius: .1rem;
+      transition: transform 0.4s ease, background-color 0.4s ease;
 
-      &:hover {
-        background-color: $jasmine;
-        color: $vampire-black;
+      &:hover,
+      &:active {
+        animation: none;
+        transform: scale(1.2);
+        background-color: $light-charcoal;
+        border-color: $jordy-blue;
+      }
+
+      &:focus {
+        animation: none;
+        transform: scale(1.2);
+        outline: none;
+        border-color: $jordy-blue;
+        box-shadow: 0 0 0 2px $jordy-blue;
       }
     }
   }
 
+  &-button {
+    width: 4rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+
+    &:hover {
+      animation: none;
+      transform: scale(0.9);
+    }
+
+    &-wrapper {
+      display: inline-block;
+      position: relative;
+    
+      &.loading::before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        width: 100%;
+        height: 100%;
+        border: 3px dashed $mikado-yellow;
+        border-radius: 50%;
+        animation: rotate 3s linear infinite;
+      }
+    
+      img {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+// Animations
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+p {
+  font-size: 0.8rem;
+  padding-top: 0.4rem;
 }

@@ -3,12 +3,13 @@ import * as THREE from "three";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import {OrbitControls,Environment,useGLTF,} from "@react-three/drei";
 import { Physics, useBox, useSphere } from "@react-three/cannon";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, memo } from "react";
 import hdr from "../../assets/hdr/adamsbridge.hdr";
 import giraffe from "../../assets/3DModels/model (19).glb";
 import bike from "../../assets/3DModels/bike.glb";
 import { EffectComposer, N8AO, SMAA } from "@react-three/postprocessing";
 import { Link } from "react-router-dom";
+
 
 const rfs = THREE.MathUtils.randFloatSpread;
 
@@ -27,7 +28,6 @@ const glassMaterial = new THREE.MeshPhysicalMaterial({
 
 const ModelUploader = ({ newModel }) => {
   const [models, setModels] = useState([]);
-  //console.log("newModel", newModel)
   const directionalLightRef = useRef();
 
   // Load the giraffe model initially
@@ -235,4 +235,4 @@ const ModelUploader = ({ newModel }) => {
   );
 };
 
-export default ModelUploader;
+export default memo(ModelUploader);
