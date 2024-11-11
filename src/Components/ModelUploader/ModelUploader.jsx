@@ -1,7 +1,7 @@
 import "./ModelUploader.scss";
 import * as THREE from "three";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import {OrbitControls,Environment,useGLTF,} from "@react-three/drei";
+import { OrbitControls, Environment, useGLTF } from "@react-three/drei";
 import { Physics, useBox, useSphere } from "@react-three/cannon";
 import React, { useEffect, useRef, useState, memo } from "react";
 import hdr from "../../assets/hdr/adamsbridge.hdr";
@@ -9,7 +9,6 @@ import giraffe from "../../assets/3DModels/model (19).glb";
 import bike from "../../assets/3DModels/bike.glb";
 import { EffectComposer, N8AO, SMAA } from "@react-three/postprocessing";
 import { Link } from "react-router-dom";
-
 
 const rfs = THREE.MathUtils.randFloatSpread;
 
@@ -45,7 +44,9 @@ const ModelUploader = ({ newModel }) => {
       setModels((prevModels) => [...prevModels, newModelData]);
     }
   }, [newModel, newModelData]);
+
   const bikeModel = useGLTF(bike);
+
   useEffect(() => {
     setModels([bikeModel]);
   }, [bikeModel]);
@@ -212,7 +213,9 @@ const ModelUploader = ({ newModel }) => {
           </Link>
         </div>
         <div className="canvas-index_projects">
-          <h4>PROJECTS</h4>
+          <Link to="/Projects">
+            <h4>PROJECTS</h4>
+          </Link>
           <div className="canvas-index_projects-sec">
             <div className="canvas-index_projects-sec-row">
               <Link to="/architecture">
@@ -222,8 +225,8 @@ const ModelUploader = ({ newModel }) => {
               <p>Paintings</p>
             </div>
             <div className="canvas-index_projects-sec-row">
-            <Link to="/webdev">
-              <p>Wed dev</p>
+              <Link to="/webdev">
+                <p>Wed dev</p>
               </Link>
               <p>AI/Robotics</p>
               <p>Cooking</p>

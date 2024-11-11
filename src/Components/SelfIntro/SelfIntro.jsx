@@ -41,7 +41,7 @@ const SelfIntro = () => {
 
       <div className="intro-text" >
         <h2>About Me</h2>
-        <p>Hi, I’m Raksha Shetty, an architect turned tech enthusiast with a passion for blending design, code, and immersive experiences. With a Master’s in Architectural Technologies, I explore the intersection of AI, AR/VR, and digital art to create innovative, interactive environments. From designing spaces to building dynamic 3D experiences, I’m always excited about pushing the boundaries of what’s possible through technology.</p>
+        <p>Hi, I’m Raksha Shetty, an architect turned tech enthusiast with a passion for blending design, coding, and immersive experiences. With a Master’s in Architectural Technologies, I explore the intersection of AI, AR/VR, and digital art to create innovative, interactive environments. From designing spaces to building dynamic 3D experiences, I’m always excited about pushing the boundaries of what’s possible through technology.</p>
         <div className="intro-text_index">
           <h1><a href="#architecture">Architecture</a></h1>
           <h1><a href="#ar-vr-xr">AR/VR/XR</a></h1>
