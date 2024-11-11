@@ -63,20 +63,16 @@ https://docs.meshy.ai
 ### Mockups
 
 #### Home Page
-![](assets/home.png)
+![Conceptual idea]([assets/home.png](https://github.com/rakshajay/First-Point/blob/main/src/assets/Readme/home.png))
 
 #### Sections of portfolio- intro
-![](assets/portfolio-intro.png)
+![Conceptual UI](https://github.com/rakshajay/First-Point/blob/main/src/assets/Readme/portfolio-intro.png)
 
 #### Sections of portfolio- intro2
-![](assets/portfolio-intro2.png)
+![Conceptual UI](https://github.com/rakshajay/First-Point/blob/main/src/assets/Readme/portfolio-intro.png)
 
 #### Gallery
-![](assets/gallery.png)
-
-#### Comments
-![](assets/comments.png)
-
+![Projects Gallery Initail Concept](https://github.com/rakshajay/First-Point/blob/main/src/assets/Readme/gallery.png)
 
 ### Data
 
