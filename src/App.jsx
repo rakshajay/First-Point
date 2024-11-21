@@ -33,8 +33,8 @@ function App() {
                   element={<ProjectGallery />}
                 />
                 <Route
-                  path="/OnBuild"
-                  element={<OnBuild />}
+                  path="/ar"
+                  element={<ProjectGallery />}
                 />
                 <Route
                   path="/OnBuild"

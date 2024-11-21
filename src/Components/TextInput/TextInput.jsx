@@ -11,7 +11,7 @@ const TextInput = () => {
   const [textInputOpen, setTextInputOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const apiUrl = import.meta.env.VITE_API_URL;
+  const apiUrl = "https://api.meshy.ai/v2/text-to-3d";
   const apiKey = import.meta.env.VITE_API_CODE;
 
   const promptSubmit = async () => {
@@ -70,7 +70,7 @@ const TextInput = () => {
 
   return (
     <div className="home">
-      <div className="home-prompt">
+      {/* <div className="home-prompt">
         <div style={{ visibility: textInputOpen ? "visible" : "hidden" }}>
           <h2 className="home-info"> 
             "Hey there! Why not add your favorite object and become part of this collaborative installation?"
@@ -103,7 +103,7 @@ const TextInput = () => {
             style={{ opacity: loading ? 0 : 1 }}
           />
         </div>
-      </div>
+      </div> */}
       <div>
         <ModelUploader newModel={modelUrls} />
       </div>

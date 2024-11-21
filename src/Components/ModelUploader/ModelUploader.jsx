@@ -109,7 +109,7 @@ const ModelUploader = ({ newModel }) => {
           castShadow
           receiveShadow
           args={[geometry, null, 40]}
-          scale={[1, 1, 1]}
+          scale={[1.4, 1.4, 1.4]}
           position={[0, 0, 0]}
         >
           <primitive attach="material" object={glassMaterial} />
@@ -119,7 +119,7 @@ const ModelUploader = ({ newModel }) => {
           castShadow
           receiveShadow
           args={[geometry2, null, 20]} // Use geometry for object 2
-          scale={[1, 1, 1]} // Scale up on hover
+          scale={[1.4, 1.4, 1.4]} // Scale up on hover
           position={[0, 0, 0]}
         >
           <primitive attach="material" object={material2} />
@@ -132,7 +132,7 @@ const ModelUploader = ({ newModel }) => {
     const [ref] = useBox(() => ({
       type: "Static",
       mass: 1,
-      position: [0, 0, 0],
+      position: [0, 1, 0],
       args: [40, 2, 10],
     }));
 
@@ -221,7 +221,7 @@ const ModelUploader = ({ newModel }) => {
               <Link  to="/architecture">
                 <p >Architecture</p>
               </Link>
-              <Link to="/OnBuild">
+              <Link to="/ar">
               <p>AR/VR/XR</p>
               </Link>
               <Link to="/OnBuild">
