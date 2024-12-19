@@ -10,8 +10,8 @@ const ProjectGallery = () => {
   const [error, setError] = useState(null);
 
   // Get server URL from environment variables or hardcoded fallback
- // const serverURL = "https://portfolio-backend-sa3o.onrender.com";
- const serverURL = "http://localhost:5050"
+ const serverURL = "https://portfolio-backend-sa3o.onrender.com";
+//  const serverURL = "http://localhost:5050"
   // Use React Router's useLocation to get the current path
   const location = useLocation();
   const endpoint = `${serverURL}${location.pathname}`; // Combine serverURL with current path
