@@ -14,10 +14,10 @@ const AllProjects = () => {
         const [architectureRes, webdevRes] = await Promise.all([
           axios.get("https://portfolio-backend-sa3o.onrender.com/architecture"),
           axios.get("https://portfolio-backend-sa3o.onrender.com/webdev"),
+          axios.get("https://portfolio-backend-sa3o.onrender.com/ar"),
           // shd add other sections
         ]);
-       console.log("architectureRes",architectureRes )
-       console.log("webdevRes",webdevRes )
+
         const allProjects = [
           ...architectureRes.data,
           ...webdevRes.data,
@@ -36,8 +36,8 @@ const AllProjects = () => {
     fetchAllProjects();
   }, []);
 
-  if (loading) return <div className="loading-container"></div>;
-  if (error) return <div>{error}</div>;
+  if (loading) return <div className="loading-container">Loading</div>;
+  if (error) return <div>{error}error</div>;
 
   return (
     <div className="allprojects-container">

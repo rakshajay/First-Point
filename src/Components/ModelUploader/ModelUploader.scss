@@ -14,8 +14,6 @@
    }
 
   &-index {
-    @include flex-space-between;
-    flex-direction: row;
      z-index: 18;
     position: absolute;
     bottom:2rem;
@@ -39,6 +37,12 @@
       color: $light-charcoal;
       &:hover{
         color: $jordy-blue;
+      }
+    }
+    &_resume{
+      display: none;
+      @include tablet{
+        display: contents;
       }
     }
     &_projects{

@@ -35,6 +35,7 @@
     .footer-location {
       @include labels-buttons-mobile;
       color: $light-charcoal;
+      padding-bottom: .6rem;
     }
   }
 }

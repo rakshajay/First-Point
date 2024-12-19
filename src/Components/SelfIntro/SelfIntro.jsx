@@ -25,7 +25,7 @@ const My3DModel = () => {
     }
   });
 
-  return <primitive object={scene} scale={1.5} />;
+  return <primitive object={scene} scale={1.5}/>;
 };
 
 const SelfIntro = () => {
@@ -41,19 +41,20 @@ const SelfIntro = () => {
       </div>
 
       <div className="intro-text" >
-        <h2>About Me</h2>
+        <h3>About Me</h3>
         <p>Hi, I’m Raksha Shetty, an architect turned tech enthusiast with a passion for blending design, coding, and immersive experiences. With a Master’s in Architectural Technologies, I explore the intersection of AI, AR/VR, and digital art to create innovative, interactive environments. From designing spaces to building dynamic 3D experiences, I’m always excited about pushing the boundaries of what’s possible through technology.</p>
         <p>gmail: rakshashettyhs@gmail.com</p>
         <p>LinkedIn: https://www.linkedin.com/in/Rakshajay/</p>
         <p>GitHub: https://github.com/rakshajay</p>
+        <p>Resume: https://www.rakshashetty.com/resume</p>
         <div className="intro-text_index">
-        <Link  to="/architecture"><h1>Architecture</h1></Link>
-        <Link  to="/OnBuild"><h1>AR/VR/XR</h1></Link>
-        <Link  to="/OnBuild"><h1>Cooking</h1></Link>
-        <Link  to="/OnBuild"><h1>Painting</h1></Link>
-        <Link  to="/webdev"><h1>Web Design/Development</h1></Link>
-        <Link  to="/OnBuild"><h1>AI/Robotics</h1></Link>
-        <Link  to="/OnBuild"><h1>Gaming</h1></Link>
+        <Link  to="/architecture"><h3>Architecture</h3></Link>
+        <Link  to="/OnBuild"><h3>AR/VR/XR</h3></Link>
+        <Link  to="/OnBuild"><h3>Cooking</h3></Link>
+        <Link  to="/OnBuild"><h3>Painting</h3></Link>
+        <Link  to="/webdev"><h3>Web Design/Development</h3></Link>
+        <Link  to="/OnBuild"><h3>AI/Robotics</h3></Link>
+        <Link  to="/OnBuild"><h3>Gaming</h3></Link>
         </div>
     </div>
     </div>

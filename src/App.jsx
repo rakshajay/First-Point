@@ -10,6 +10,7 @@ import OnBuild from './Components/OnBuild/OnBuild';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import Resume from './Components/Resume/Resume';
+import Paintings from './pages/Paintings/Paintings';
 
 function App() {
   return (
@@ -45,8 +46,8 @@ function App() {
                   element={<ProjectGallery />}
                 />
                 <Route
-                  path="/OnBuild"
-                  element={<OnBuild />}
+                  path="/Paintings"
+                  element={<Paintings />}
                 />
                 <Route
                   path="/OnBuild"

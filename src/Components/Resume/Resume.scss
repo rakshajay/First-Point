@@ -12,16 +12,16 @@
   background-color: black;
   border: 2px solid $dark-charcoal;
   box-shadow: 0 4px 12px rgba($vampire-black, 0.2);
-
+  width: 100%;
+ height: 100vh;
   iframe {
     position: absolute;
-    width: 100%;
-    height: 90vh;
-    top: 0;
+    width: 100vw;
+    height: 100vh;
+     top: 0;
     left: 0;
     border: none;
     padding: 0;
     margin: 0;
   }
-
 }

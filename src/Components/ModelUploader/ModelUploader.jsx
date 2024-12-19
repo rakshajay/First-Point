@@ -208,7 +208,7 @@ const ModelUploader = ({ newModel }) => {
           <Link to="/intro">
             <h1>ME</h1>
           </Link>
-          <Link to="/resume">
+          <Link to="/resume" className="canvas-index_resume">
             <p>Resume</p>
           </Link>
         </div>
@@ -224,7 +224,7 @@ const ModelUploader = ({ newModel }) => {
               <Link to="/ar">
               <p>AR/VR/XR</p>
               </Link>
-              <Link to="/OnBuild">
+              <Link to="/Paintings">
               <p>Paintings</p>
               </Link>
             </div>
