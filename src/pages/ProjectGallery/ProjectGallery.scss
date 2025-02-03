@@ -8,6 +8,13 @@
   gap: 2rem;
 }
 
-.loading-spinner {
-  @include loading-spinner(#FFC40C);
+.loading{
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  align-items: center;
+  margin-top: 20%;
+  &-spinner{
+    @include loading-spinner;
+  }
 }

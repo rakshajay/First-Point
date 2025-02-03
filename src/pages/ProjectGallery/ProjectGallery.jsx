@@ -10,14 +10,15 @@ const ProjectGallery = () => {
   const [error, setError] = useState(null);
 
   // Get server URL from environment variables or hardcoded fallback
- const serverURL = "https://portfolio-backend-sa3o.onrender.com";
-//  const serverURL = "http://localhost:5050"
+  //const serverURL = "https://portfolio-backend-sa3o.onrender.com";
+  const serverURL = "http://localhost:5050";
   // Use React Router's useLocation to get the current path
   const location = useLocation();
   const endpoint = `${serverURL}${location.pathname}`; // Combine serverURL with current path
   //console.log("endpoint", endpoint)
   useEffect(() => {
     const fetchProjects = async () => {
+      setLoading(true);
       try {
         // Make an Axios call to the backend using the dynamic endpoint
         const response = await axios.get(endpoint);
@@ -25,7 +26,7 @@ const ProjectGallery = () => {
         setLoading(false);
       } catch (err) {
         console.error('Error fetching projects:', err);
-        setError('Error fetching projects data');
+        setError('Error fetching all projects data, ');
         setLoading(false);
       }
     };
@@ -33,8 +34,15 @@ const ProjectGallery = () => {
     fetchProjects();
   }, [endpoint]); // Dependency includes endpoint, so it updates if the route changes
 
-  if (loading) return <div className="loading-spinner">Loading....</div>; // Show loading spinner
-  if (error) return <div>{error}</div>;
+  if (loading)
+    return (
+      <div className="loading">
+        <div className="loading-spinner"></div>
+        <div>Loading</div>
+      </div>
+    ); // Show loading spinner
+
+  if (error) return <div  className="loading">{error} <br /> "Apologies for inconvenience"</div>;
 
   return (
     <div className="project-container">

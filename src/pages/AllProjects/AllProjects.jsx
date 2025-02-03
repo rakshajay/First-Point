@@ -7,14 +7,15 @@ const AllProjects = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+//const serverURL = "https://portfolio-backend-sa3o.onrender.com";
+ const serverURL = "http://localhost:5050"
   useEffect(() => {
     const fetchAllProjects = async () => {
       try {
         const [architectureRes, webdevRes] = await Promise.all([
-          axios.get("https://portfolio-backend-sa3o.onrender.com/architecture"),
-          axios.get("https://portfolio-backend-sa3o.onrender.com/webdev"),
-          axios.get("https://portfolio-backend-sa3o.onrender.com/ar"),
+          axios.get(`${serverURL}/architecture`),
+          axios.get(`${serverURL}/webdev`),
+          axios.get(`${serverURL}/ar`),
           // shd add other sections
         ]);
 
@@ -27,8 +28,8 @@ const AllProjects = () => {
         setProjects(allProjects);
         setLoading(false);
       } catch (err) {
-        console.error('Error fetching projects:', err);
-        setError('Error fetching all projects data');
+        console.error('Error fetching projects:  ', err);
+        setError('Error fetching all projects data,');
         setLoading(false);
       }
     };
@@ -36,8 +37,15 @@ const AllProjects = () => {
     fetchAllProjects();
   }, []);
 
-  if (loading) return <div className="loading-container">Loading</div>;
-  if (error) return <div>{error}error</div>;
+  if (loading)
+    return (
+      <div className="loading">
+        <div className="loading-spinner"></div>
+        <div>Loading</div>
+      </div>
+    ); // Show loading spinner
+
+  if (error) return <div  className="loading">{error}<br /> "Apologies for inconvenience"</div>;
 
   return (
     <div className="allprojects-container">
