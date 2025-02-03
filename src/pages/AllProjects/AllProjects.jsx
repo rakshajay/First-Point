@@ -7,8 +7,8 @@ const AllProjects = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-//const serverURL = "https://portfolio-backend-sa3o.onrender.com";
- const serverURL = "http://localhost:5050"
+const serverURL = "https://portfolio-backend-sa3o.onrender.com";
+ //const serverURL = "http://localhost:5050"
   useEffect(() => {
     const fetchAllProjects = async () => {
       try {

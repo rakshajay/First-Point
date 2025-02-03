@@ -5,8 +5,8 @@ import ImageModal from '../ImageModal/ImageModal'; // Import your modal componen
 import { boldWords } from "../../utils/boldwords";
 
 
-//const serverURL = "https://portfolio-backend-sa3o.onrender.com"
-const serverURL = "http://localhost:5050"
+const serverURL = "https://portfolio-backend-sa3o.onrender.com"
+//const serverURL = "http://localhost:5050"
 const GalleryCard = ({ project }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null); // Track the selected image
