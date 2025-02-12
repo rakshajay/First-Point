@@ -1,8 +1,7 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Capstone Project | First-Point-Client & Server-Side 
+  
+SEP  2024, FULL-STACK REACT APPLICATION 
+> Developed an interactive and immersive digital installation project using , 
+Three.js & Meshy API, where users can add contributions by generating 
+new 3D models using the Text-to-3D API.
+![alt text](src\assets\Readme\ezgif.com-video-to-gif-converter.gif)
