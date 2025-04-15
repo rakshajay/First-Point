@@ -12,7 +12,7 @@ const serverURL = "https://portfolio-backend-sa3o.onrender.com";
   useEffect(() => {
     const fetchAllProjects = async () => {
       try {
-        const [architectureRes, webdevRes] = await Promise.all([
+        const [architectureRes, webdevRes, arRes] = await Promise.all([
           axios.get(`${serverURL}/architecture`),
           axios.get(`${serverURL}/webdev`),
           axios.get(`${serverURL}/ar`),
@@ -22,6 +22,7 @@ const serverURL = "https://portfolio-backend-sa3o.onrender.com";
         const allProjects = [
           ...architectureRes.data,
           ...webdevRes.data,
+          ...arRes.data,
           // shd add other sections
         ];
 
