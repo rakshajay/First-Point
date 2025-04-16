@@ -233,7 +233,7 @@ const ModelUploader = ({ newModel }) => {
                 <p>Wed dev</p>
               </Link>
               <Link to="/airobotics">
-              <p>AI/Robo/Tech</p>
+              <p>AI/ML/Tech</p>
               </Link>
               <Link to="/OnBuild">
               <p>Cook</p>
