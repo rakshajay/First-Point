@@ -41,6 +41,11 @@ const Paintings = () => {
       thumbnail: 'https://res.cloudinary.com/dy1q2hcit/image/upload/v1744828749/paintings_2_urcdyk.png',
       description: 'This is the third image description.',
     },
+    {
+      original: 'https://res.cloudinary.com/dy1q2hcit/image/upload/v1744842310/20220817_182201_vddoh8.jpg',
+      thumbnail: 'https://res.cloudinary.com/dy1q2hcit/image/upload/v1744842310/20220817_182201_vddoh8.jpg',
+      description: 'This is the third image description.',
+    },
   ];
 
   return (
