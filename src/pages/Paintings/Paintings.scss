@@ -1,0 +1,49 @@
+@use "../src/styles/partials/mixins" as *;
+@use "../src/styles/partials/variables" as *;
+
+// Paintings.scss
+
+.image-gallery {
+    height: 100vh;
+    padding: 2rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  
+    // Make the inner gallery take all available space
+    .image-gallery-slide-wrapper {
+      flex: 1;
+      overflow: hidden; // Prevent overflow
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .image-gallery_items {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap:2rem;
+      height: 100%; // Take full available height
+  
+      img {
+        max-height: 60vh; // Prevent image from exceeding screen height
+        width: auto;
+        max-width: 90%;
+        object-fit: contain;
+        border-radius: .2rem;
+        transition: transform 0.3s ease;
+  
+        &:hover {
+          transform: scale(1.02);
+        }
+      }
+    }
+
+  }
+  .image-gallery-thumbnails-bottom{
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+  }
