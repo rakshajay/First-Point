@@ -50,8 +50,8 @@ function App() {
                   element={<Paintings />}
                 />
                 <Route
-                  path="/OnBuild"
-                  element={<OnBuild />}
+                  path="/airobotics"
+                  element={<ProjectGallery />}
                 />
                 <Route
                   path="/projects"

@@ -31,6 +31,6 @@ export const boldWords = [
   "Computational Design", "User Experience", "Customer Engagement", "furniture and fixtures",
 
   //web
-  "JavaScript", "HTML", "CSS", "Three.js", "Fabric.js", "Vite", "Sass", "SweetAlert2", "React Router", "Axios"
+  "JavaScript", "HTML", "CSS", "Three.js", "Fabric.js", "Vite", "Sass", "SweetAlert2", "React Router", "Axios", "AR", 
   ];
   
