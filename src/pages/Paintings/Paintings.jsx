@@ -8,12 +8,12 @@ const Paintings = () => {
   const images = [
     {
       original: 'https://res.cloudinary.com/dy1q2hcit/image/upload/v1744780134/Painting2_ufxzfw.jpg',
-      thumbnail: 'https://via.placeholder.com/150x100?text=Thumb+1',
+      thumbnail: 'https://res.cloudinary.com/dy1q2hcit/image/upload/v1744780134/Painting2_ufxzfw.jpg',
       description: 'This is the first image description.',
     },
     {
       original: 'https://res.cloudinary.com/dy1q2hcit/image/upload/v1744780135/Painting3_ckoyad.jpg',
-      thumbnail: 'https://via.placeholder.com/150x100?text=Thumb+2',
+      thumbnail: 'https://res.cloudinary.com/dy1q2hcit/image/upload/v1744780135/Painting3_ckoyad.jpg',
       description: 'This is the second image description.',
     },
     {
@@ -29,6 +29,16 @@ const Paintings = () => {
     {
       original: 'https://res.cloudinary.com/dy1q2hcit/image/upload/v1744780136/Painting1_oiia3u.jpg',
       thumbnail: 'https://res.cloudinary.com/dy1q2hcit/image/upload/v1744780136/Painting1_oiia3u.jpg',
+      description: 'This is the third image description.',
+    },
+    {
+      original: 'https://res.cloudinary.com/dy1q2hcit/image/upload/v1744828752/paintings_1_aeiyo7.png',
+      thumbnail: 'https://res.cloudinary.com/dy1q2hcit/image/upload/v1744828752/paintings_1_aeiyo7.png',
+      description: 'This is the third image description.',
+    },
+    {
+      original: 'https://res.cloudinary.com/dy1q2hcit/image/upload/v1744828749/paintings_2_urcdyk.png',
+      thumbnail: 'https://res.cloudinary.com/dy1q2hcit/image/upload/v1744828749/paintings_2_urcdyk.png',
       description: 'This is the third image description.',
     },
   ];
