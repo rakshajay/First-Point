@@ -27,7 +27,7 @@ const GalleryCard = ({ project }) => {
 
   return (
     <div className="project-card">
-      <a href={project.link}><img src={`${serverURL}/${project.mainImage}`} alt={project.title} className="project-image"/></a>
+      <a href={project.link}><img src={project.mainImage} alt={project.title} className="project-image"/></a>
       <h2>{project.title}</h2>
       <h3>{project.subTitle}</h3>
       <div className="project-details">
@@ -41,7 +41,7 @@ const GalleryCard = ({ project }) => {
           <div key={item.id} className="project-gallery_item">
             <img 
               onClick={() => displayModal(item.image)} // Display the modal on click
-              src={`${serverURL}/${item.image}`} 
+              src={item.image}
               alt={item.description} 
             />
           </div>
@@ -53,7 +53,7 @@ const GalleryCard = ({ project }) => {
 
       {modalOpen && (
         <ImageModal 
-          images={project.gallery.map(item => `${serverURL}/${item.image}`)} // Pass all gallery images to the modal
+          images={project.gallery.map(item => {item.image})} // Pass all gallery images to the modal
           isOpen={modalOpen} 
           onClose={closeModal}
         />
