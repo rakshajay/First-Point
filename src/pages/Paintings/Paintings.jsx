@@ -6,18 +6,28 @@ const Paintings = () => {
   // Array of images for the gallery
   const images = [
     {
-      original: 'https://via.placeholder.com/800x400?text=Image+1',
-      thumbnail: 'https://via.placeholder.com/150x100?text=Thumb+1',
+      original: 'https://res.cloudinary.com/dy1q2hcit/image/upload/v1744780134/Painting2_ufxzfw.jpg',
+      thumbnail: 'https://res.cloudinary.com/dy1q2hcit/image/upload/v1744780134/Painting2_ufxzfw.jpg',
       description: 'This is the first image description.',
     },
     {
-      original: 'https://via.placeholder.com/800x400?text=Image+2',
-      thumbnail: 'https://via.placeholder.com/150x100?text=Thumb+2',
+      original: 'https://res.cloudinary.com/dy1q2hcit/image/upload/v1744780135/Painting3_ckoyad.jpg',
+      thumbnail: 'https://res.cloudinary.com/dy1q2hcit/image/upload/v1744780135/Painting3_ckoyad.jpg',
       description: 'This is the second image description.',
     },
     {
-      original: 'https://via.placeholder.com/800x400?text=Image+3',
-      thumbnail: 'https://via.placeholder.com/150x100?text=Thumb+3',
+      original: 'https://res.cloudinary.com/dy1q2hcit/image/upload/v1744780136/Painting1_oiia3u.jpg',
+      thumbnail: 'https://res.cloudinary.com/dy1q2hcit/image/upload/v1744780136/Painting1_oiia3u.jpg',
+      description: 'This is the third image description.',
+    },
+    {
+      original: 'https://res.cloudinary.com/dy1q2hcit/image/upload/v1744780140/Painting4_carvej.jpg',
+      thumbnail: 'https://res.cloudinary.com/dy1q2hcit/image/upload/v1744780140/Painting4_carvej.jpg',
+      description: 'This is the third image description.',
+    },
+    {
+      original: 'https://res.cloudinary.com/dy1q2hcit/image/upload/v1744780207/Painting5_hb67uw.jpg',
+      thumbnail: 'https://res.cloudinary.com/dy1q2hcit/image/upload/v1744780207/Painting5_hb67uw.jpg',
       description: 'This is the third image description.',
     },
   ];
