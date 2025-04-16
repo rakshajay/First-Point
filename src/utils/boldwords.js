@@ -28,7 +28,9 @@ export const boldWords = [
 
     // Industry Terms
   "Architecture", "Retail Design", "Interior Design", "Urban Design", "Neuroscience", "Technology", 
-  "Computational Design", "User Experience", "Customer Engagement", "furniture and fixtures"
-  
+  "Computational Design", "User Experience", "Customer Engagement", "furniture and fixtures",
+
+  //web
+  "JavaScript", "HTML", "CSS", "Three.js", "Fabric.js", "Vite", "Sass", "SweetAlert2", "React Router", "Axios"
   ];
   
