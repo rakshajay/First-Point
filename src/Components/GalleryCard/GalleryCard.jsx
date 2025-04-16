@@ -53,7 +53,7 @@ const GalleryCard = ({ project }) => {
 
       {modalOpen && (
         <ImageModal 
-          images={project.gallery.map(item => {item.image})} // Pass all gallery images to the modal
+          images={project.gallery.map(item => item.image)} // Pass all gallery images to the modal
           isOpen={modalOpen} 
           onClose={closeModal}
         />
